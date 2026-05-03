@@ -1,0 +1,112 @@
+types:
+  # === 技能实体 ===
+  Skill:
+    required: [name, status]
+    properties:
+      name: string
+      version: string?
+      description: string?
+      category: string?
+      source: string?
+      status: enum(installed, available, deprecated)
+      risk_level: enum(low, medium, high, extreme)?
+
+  # === 能力实体 ===
+  Capability:
+    required: [name]
+    properties:
+      name: string
+      description: string?
+      scope: enum(internal, external, hybrid)?
+      automation_level: enum(manual, semi_auto, full_auto)?
+
+  # === 边界/限制实体 ===
+  Boundary:
+    required: [name, type]
+    properties:
+      name: string
+      type: enum(technical, security, policy, dependency)
+      description: string?
+      severity: enum(info, warning, critical)?
+
+  # === 使用场景 ===
+  UseCase:
+    required: [title]
+    properties:
+      title: string
+      description: string?
+      trigger: string?
+      priority: enum(low, medium, high)?
+
+  # === 集成模式 ===
+  Integration:
+    required: [name]
+    properties:
+      name: string
+      description: string?
+      pattern: enum(pipeline, callback, shared_state, event_driven)?
+
+  # === 最佳实践 ===
+  BestPractice:
+    required: [title]
+    properties:
+      title: string
+      description: string?
+      category: enum(security, performance, workflow, architecture)?
+
+  # 复用已有类型
+  Task:
+    required: [title, status]
+    status_enum: [open, in_progress, blocked, done]
+
+  Project:
+    required: [name]
+
+  Person:
+    required: [name]
+
+relations:
+  has_capability:
+    from_types: [Skill]
+    to_types: [Capability]
+    cardinality: one_to_many
+
+  has_boundary:
+    from_types: [Skill]
+    to_types: [Boundary]
+    cardinality: one_to_many
+
+  has_use_case:
+    from_types: [Skill]
+    to_types: [UseCase]
+    cardinality: one_to_many
+
+  integrates_with:
+    from_types: [Skill]
+    to_types: [Skill]
+    cardinality: many_to_many
+
+  integration_pattern:
+    from_types: [Integration]
+    to_types: [Skill]
+    cardinality: many_to_many
+
+  follows_practice:
+    from_types: [Skill, Capability]
+    to_types: [BestPractice]
+    cardinality: many_to_many
+
+  enhances:
+    from_types: [Capability]
+    to_types: [Capability]
+    cardinality: many_to_many
+
+  constrained_by:
+    from_types: [Capability]
+    to_types: [Boundary]
+    cardinality: many_to_many
+
+  requires:
+    from_types: [Skill]
+    to_types: [Boundary]
+    cardinality: many_to_many

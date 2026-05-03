@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "skills": {
+    "skill-vetter": {
+      "version": "1.0.0",
+      "installedAt": 1777597188282
+    },
+    "ontology": {
+      "version": "1.0.4",
+      "installedAt": 1777600289011
+    },
+    "baidu-search": {
+      "version": "1.1.4",
+      "installedAt": 1777601104039
+    },
+    "elite-longterm-memory": {
+      "version": "1.2.3",
+      "installedAt": 1777606307636
+    },
+    "memory-manager": {
+      "version": "1.0.0",
+      "installedAt": 1777781583016
+    }
+  }
+}
