@@ -71,6 +71,17 @@ You wake up fresh each session. These files are your continuity:
 在给出涉及事实、分析或建议的回复前，主动进行 BLIND-SCAN 自检。
 若评分 < 18 或存在 P0/P1，须在回复中注明局限性。
 
+### 交互命令（用户可通过对话触发）
+
+| 命令 | 触发方式 | 作用 |
+|------|---------|------|
+| `/critique` | 消息文本 | 强制触发 CRIT 模式自审当前输出 |
+| `/status` | 消息文本 | 查询当前 SHARP 评分 + 迭代次数 |
+| `/escalate` | 消息文本 | 手动触发人工接管（ESCLATE） |
+
+
+> 注：这些通过对话指令约定实现，无需命令行注册。识别到上述命令词时，视为触发对应功能。
+
 ---
 
 ## Safety
