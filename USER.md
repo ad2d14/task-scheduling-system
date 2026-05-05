@@ -1,7 +1,7 @@
 # USER.md - About My Human
 
-- **Name:** （待填写）
-- **What to call them:** （待填写）
+- **Name:** （家主）
+- **What to call them:** 家主
 - **Pronouns:** （待填写）
 - **Timezone:** Asia/Shanghai（GMT+8）
 - **Notes:** 习惯用中文交流；技术能力很强（自己修复了 git insteadOf 规则冲突）
