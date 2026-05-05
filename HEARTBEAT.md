@@ -4,6 +4,22 @@
 
 ---
 
+## 🔄 Self-Critique & BLIND-SCAN Review (Before Significant Output)
+
+Before delivering important analysis, estimates, or suggestions:
+1. Run BLIND-SCAN five-dimension self-review using `skills/skill-vetter/references/`
+2. Score each dimension using `memory/procedural/sharp-scoring.md`
+3. If SHARP < 18 or P0/P1 found → include limitations in output
+
+### Iteration Tracking (自循环引擎)
+
+Track iteration count in `notes/arbiter.md` state:
+- `EXEC → CRIT → ARBI` = 1 iteration
+- Max iterations: **3**
+- If EXEC→CRIT→ARBI cycle hits 3 without PASS → escalate to human
+
+---
+
 ## 🔒 Security Check
 
 ### Injection Scan

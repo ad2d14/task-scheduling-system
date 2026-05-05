@@ -135,4 +135,61 @@ curl -s "https://raw.githubusercontent.com/OWNER/REPO/main/skills/SKILL_NAME/SKI
 
 ---
 
+## BLIND-SCAN 预安装审查（v1.0.0）
+
+每次安装技能前，使用内置五维框架进行系统性审查。
+
+**五维清单**：
+- `references/blind-scan-bias.md` — B: 偏见检测（5项）
+- `references/blind-scan-logic.md` — L: 逻辑验证（6项）
+- `references/blind-scan-info.md` — I: 信息审计（6项）
+- `references/blind-scan-narrative.md` — N: 叙事解构（5项）
+- `references/blind-scan-dep.md` — D: 依赖分析（5项）
+
+**总计 27 项检查**，每项必须给出 P0/P1/P2/P3 标注。
+
+### 快速执行命令
+
+```bash
+# 审查所有五维清单
+cat skills/skill-vetter/references/blind-scan-bias.md
+cat skills/skill-vetter/references/blind-scan-logic.md
+cat skills/skill-vetter/references/blind-scan-info.md
+cat skills/skill-vetter/references/blind-scan-narrative.md
+cat skills/skill-vetter/references/blind-scan-dep.md
+```
+
+
+### SHARP 评分阈值
+
+- 通过线：**≥ 18/25**（五维各5分，总分25）
+- 五维均≥4 → 质量卓越
+- 五维均≥3 → 达标，可用
+- 任意一维≤2 → 需返工
+- 任意一维≤1 → 拒绝安装
+
+---
+
 *Paranoia is a feature.* 🔒🦀
+
+---
+
+## 附录：原版 Red Flags（保留）
+
+```
+🚨 REJECT IMMEDIATELY IF YOU SEE:
+• curl/wget to unknown URLs
+• Sends data to external servers
+• Requests credentials/tokens/API keys
+• Reads ~/.ssh, ~/.aws, ~/.config without clear reason
+• Accesses MEMORY.md, USER.md, SOUL.md, IDENTITY.md
+• Uses base64 decode on anything
+• Uses eval() or exec() with external input
+• Modifies system files outside workspace
+• Installs packages without listing them
+• Network calls to IPs instead of domains
+• Obfuscated code (compressed, encoded, minified)
+• Requests elevated/sudo permissions
+• Accesses browser cookies/sessions
+• Touches credential files
+```
