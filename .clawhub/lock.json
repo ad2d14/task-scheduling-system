@@ -20,6 +20,26 @@
     "memory-manager": {
       "version": "1.0.0",
       "installedAt": 1777781583016
+    },
+    "lancedb-memory": {
+      "version": "1.0.0",
+      "installedAt": 1777795095279
+    },
+    "memory-hygiene": {
+      "version": "1.0.0",
+      "installedAt": 1777822179243
+    },
+    "self-improving-agent": {
+      "version": "3.0.21",
+      "installedAt": 1777976209932
+    },
+    "proactive-agent": {
+      "version": "3.1.0",
+      "installedAt": 1777979125206
+    },
+    "github": {
+      "version": "1.0.0",
+      "installedAt": 1777980296120
     }
   }
 }

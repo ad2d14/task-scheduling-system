@@ -1,6 +1,6 @@
 # HEARTBEAT.md - Periodic Self-Improvement
 
-> Proactive Agent patterns + Memory hygiene combined.
+> Configure your agent to poll this during heartbeats.
 
 ---
 
@@ -28,7 +28,7 @@ Confirm:
 ### Log Review
 ```bash
 # Check recent logs for issues
-tail -100 /tmp/clawdbot/*.log | grep -i "error|fail|warn"
+tail -100 /tmp/clawdbot/*.log | grep -i "error\|fail\|warn"
 ```
 
 Look for:
@@ -44,23 +44,6 @@ When issues found:
 3. Test the fix
 4. Document in daily notes
 5. Update TOOLS.md if recurring
-
----
-
-## 🧠 Memory Management (every 2 hours)
-
-### Compression Check
-```bash
-~/.openclaw/skills/memory-manager/detect.sh
-```
-- ✅ Safe (<70% full)
-- ⚠️ WARNING (70-85% full) → run snapshot.sh
-- 🚨 CRITICAL (>85% full) → run snapshot.sh immediately
-
-### Organize at 23:00 daily
-```bash
-~/.openclaw/skills/memory-manager/organize.sh
-```
 
 ---
 
@@ -100,7 +83,7 @@ Safe to close: Preview, TextEdit, one-off apps
 
 ---
 
-## 🧠 Memory Maintenance
+## 🔄 Memory Maintenance
 
 Every few days:
 1. Read through recent daily notes
@@ -128,6 +111,8 @@ Once a week, ask your human:
 1. "Based on what I know about you, what interesting things could I do that you haven't thought of?"
 2. "What information would help me be more useful to you?"
 
+**Purpose:** Surface unknown unknowns. They might not know what you can do. You might not know what they need.
+
 ---
 
 ## 📊 Proactive Work
@@ -140,18 +125,4 @@ Things to check periodically:
 
 ---
 
-## WAL Protocol Reminder
-
-**Before responding, scan every message for:**
-- ✏️ Corrections — "It's X, not Y" / "Actually..."
-- 📍 Proper nouns — Names, places, companies
-- 🎨 Preferences — Colors, styles, approaches
-- 📋 Decisions — "Let's do X" / "Use Z"
-- 📝 Draft changes — Edits to something working on
-- 🔢 Specific values — Numbers, dates, IDs, URLs
-
-**If ANY trigger:** Write to SESSION-STATE.md FIRST, then respond.
-
----
-
-*Customize this checklist for your workflow. Proactive Agent v3.1 + Memory Manager combined.*
+*Customize this checklist for your workflow.*
